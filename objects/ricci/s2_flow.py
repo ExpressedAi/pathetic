@@ -104,8 +104,8 @@ def simulate_ricci_flow(epsilon=0.1, dt=0.05, lmax=10, d=10, N=512, rng=None):
     coeffs_tp = ricci_flow_step(coeffs_t, lambdas_all, dt=dt, damping=0.9)
 
     # Build eigenfunction matrices with coupling strength scaled by epsilon
-    coupling_t = 0.5 * epsilon
-    coupling_tp = 0.5 * epsilon * np.exp(-0.9 * dt)  # decays with flow
+    coupling_t = 0.8 * epsilon
+    coupling_tp = 0.8 * epsilon * np.exp(-0.9 * dt)  # decays with flow
 
     Phi_t = build_eigenfunction_matrix(basis, coeffs_t, d=d, coupling_strength=coupling_t)
     Phi_tp = build_eigenfunction_matrix(basis, coeffs_tp, d=d, coupling_strength=coupling_tp)
